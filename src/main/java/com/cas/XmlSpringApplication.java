@@ -1,7 +1,8 @@
 package com.cas;
 
-import com.cas.service.MessageService;
+import com.cas.bean.A;
 import org.springframework.context.ApplicationContext;
+import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 /**
@@ -10,17 +11,13 @@ import org.springframework.context.support.ClassPathXmlApplicationContext;
  * @date 2021/8/9 3:18 下午
  * @desc
  */
-public class SpringApplication {
+@ComponentScan("com.cas")
+public class XmlSpringApplication {
 
     public static void main(String[] args) {
         ApplicationContext context = new ClassPathXmlApplicationContext("classpath:application.xml");
-
-        System.out.println("context 启动成功");
-
-        MessageService messageService = context.getBean(MessageService.class);
-
-        System.out.println(messageService.getMessage());
-
+        A a = (A) context.getBean("a");
+        System.out.println(a.getName());
     }
 
 }

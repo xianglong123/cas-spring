@@ -55,4 +55,30 @@
 ### spring类加载过程
     1、初始化 AnnotationConfigApplicationContext{AnnotatedBeanDefinitionReader[reader] + ClassPathBeanDefinitionScanner[scanner]}
     2、注册组件到 reader
-        2.1 会调父类方法给属性赋值 AbstractBeanDefinition(beanClass) 
+        2.1 会调父类方法给属性赋值 AbstractBeanDefinition(beanClass)
+        
+## 组件
+    1、ApplicationContextAware 实现拥有spring上下文
+    当一个类实现了这个接口之后，这个类就可以方便的获得ApplicationContext对象（spring上下文），Spring发现某个Bean实现了ApplicationContextAware接口，Spring容器会在创建该Bean之后，自动调用该Bean的setApplicationContext（参数）方法，调用该方法时，会将容器本身ApplicationContext对象作为参数传递给该方法。
+    
+    2、FactoryBean 作用提供规范统一的实例创建过程
+    
+### 容器和对象的创建流程
+    1、先创建容器
+    2、加载配置文件文件，封装成BeanDefinition
+    3、调用执行BeanFactoryPostProcessor
+    准备工作
+        准备beanPostProcessor
+        准备监听器、事件、广播器
+    4、实例化
+    5、初始化
+    6、获取到完整对象
+    
+    
+    
+    
+    
+    
+    
+    
+     
