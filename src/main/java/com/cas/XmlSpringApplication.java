@@ -2,7 +2,6 @@ package com.cas;
 
 import com.cas.bean.A;
 import org.springframework.context.ApplicationContext;
-import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 /**
@@ -11,7 +10,6 @@ import org.springframework.context.support.ClassPathXmlApplicationContext;
  * @date 2021/8/9 3:18 下午
  * @desc
  */
-@ComponentScan("com.cas")
 public class XmlSpringApplication {
 
     public static void main(String[] args) {
