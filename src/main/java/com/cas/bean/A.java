@@ -1,5 +1,6 @@
 package com.cas.bean;
 
+
 /**
  * @author xiang_long
  * @version 1.0
