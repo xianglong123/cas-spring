@@ -19,6 +19,7 @@ repositories {
 
 dependencies {
     implementation 'org.springframework:spring-context:5.2.1.RELEASE'
+    implementation 'org.aspectj:aspectjweaver:1.9.4'
 }
 
 test {

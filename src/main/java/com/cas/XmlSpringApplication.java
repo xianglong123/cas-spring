@@ -1,7 +1,6 @@
 package com.cas;
 
-import com.cas.bean.A;
-import com.cas.bean.B;
+import com.cas.aop.Rent;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
@@ -16,11 +15,21 @@ public class XmlSpringApplication {
     public static void main(String[] args) {
         ApplicationContext context = new ClassPathXmlApplicationContext("classpath:application.xml");
 
+        /**
+        // 测试xml注入容器
         A a = context.getBean(A.class);
         System.out.println(a.getName());
 
+        // 测试@Import
         B b = context.getBean(B.class);
         System.out.println(b.getName());
+         */
+
+        /**
+         * Spring的动态代理代理的是接口,测试AOP
+         */
+        Rent rent = (Rent)context.getBean("host");
+        rent.send();
     }
 
 }

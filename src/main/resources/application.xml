@@ -1,15 +1,28 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <beans xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-       xmlns="http://www.springframework.org/schema/beans" xmlns:context="http://www.springframework.org/schema/context"
-       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/context https://www.springframework.org/schema/context/spring-context.xsd"
+       xmlns="http://www.springframework.org/schema/beans"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:aop="http://www.springframework.org/schema/aop"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/context https://www.springframework.org/schema/context/spring-context.xsd http://www.springframework.org/schema/aop https://www.springframework.org/schema/aop/spring-aop.xsd "
        default-autowire="byName">
 
 <!--    <bean id="a" class="com.cas.bean.A" init-method="init"/>-->
-    <bean id="logBeanFactoryPostProcess" class="com.cas.config.LogBeanFactoryPostProcess"/>
-    <bean id="orderBeanFactoryPostProcess" class="com.cas.config.OrderBeanFactoryPostProcess"/>
-    <bean id="logBeanPostProcess" class="com.cas.config.LogBeanPostProcess"/>
-    <bean id="importTest" class="com.cas.annotation.ImportTest"/>
+<!--    <bean id="logBeanFactoryPostProcess" class="com.cas.config.LogBeanFactoryPostProcess"/>-->
+<!--    <bean id="orderBeanFactoryPostProcess" class="com.cas.config.OrderBeanFactoryPostProcess"/>-->
+<!--    <bean id="logBeanPostProcess" class="com.cas.config.LogBeanPostProcess"/>-->
+<!--    <bean id="importTest" class="com.cas.annotation.ImportTest"/>-->
 
-    <context:component-scan base-package="com.cas"/>
+<!--    <context:component-scan base-package="com.cas"/>-->
+
+
+    <bean id="host" class="com.cas.aop.Host"/>
+    <bean id="log" class="com.cas.aop.Log"/>
+    <bean id="afterlog" class="com.cas.aop.AfterLog"/>
+
+    <aop:config>
+        <aop:pointcut id="tl" expression="execution(* com.cas.aop.Host.*(..))"/>
+        <aop:advisor advice-ref="log" pointcut-ref="tl"/>
+        <aop:advisor advice-ref="afterlog" pointcut-ref="tl"/>
+    </aop:config>
 
 </beans>
