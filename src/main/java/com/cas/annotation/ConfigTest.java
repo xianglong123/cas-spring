@@ -1,4 +1,4 @@
-package com.cas.config;
+package com.cas.annotation;
 
 import org.springframework.context.annotation.Configuration;
 

@@ -4,10 +4,11 @@
        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/context https://www.springframework.org/schema/context/spring-context.xsd"
        default-autowire="byName">
 
-    <bean id="a" class="com.cas.bean.A" init-method="init"/>
+<!--    <bean id="a" class="com.cas.bean.A" init-method="init"/>-->
     <bean id="logBeanFactoryPostProcess" class="com.cas.config.LogBeanFactoryPostProcess"/>
     <bean id="orderBeanFactoryPostProcess" class="com.cas.config.OrderBeanFactoryPostProcess"/>
     <bean id="logBeanPostProcess" class="com.cas.config.LogBeanPostProcess"/>
+    <bean id="importTest" class="com.cas.annotation.ImportTest"/>
 
     <context:component-scan base-package="com.cas"/>
 

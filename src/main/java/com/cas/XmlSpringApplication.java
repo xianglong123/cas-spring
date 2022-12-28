@@ -1,6 +1,7 @@
 package com.cas;
 
 import com.cas.bean.A;
+import com.cas.bean.B;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
@@ -14,8 +15,12 @@ public class XmlSpringApplication {
 
     public static void main(String[] args) {
         ApplicationContext context = new ClassPathXmlApplicationContext("classpath:application.xml");
-        A a = (A) context.getBean("a");
+
+        A a = context.getBean(A.class);
         System.out.println(a.getName());
+
+        B b = context.getBean(B.class);
+        System.out.println(b.getName());
     }
 
 }

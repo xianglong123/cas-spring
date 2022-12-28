@@ -7,14 +7,9 @@ package com.cas.bean;
  * @date 2022/8/21 5:11 下午
  * @desc
  */
-public class A {
+public class B {
 
-    private String name = "aa";
-
-
-    public void init() {
-        this.name = "a";
-    }
+    private String name = "b";
 
     public String getName() {
         return name;
