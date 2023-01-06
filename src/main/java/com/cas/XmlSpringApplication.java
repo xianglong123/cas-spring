@@ -13,8 +13,8 @@ import org.springframework.context.support.ClassPathXmlApplicationContext;
 public class XmlSpringApplication {
 
     public static void main(String[] args) {
-        System.getProperties().put("sun.misc.ProxyGenerator.saveGeneratedFiles","true");
-        System.getProperties().put("jdk.proxy.ProxyGenerator.saveGeneratedFiles","true");
+//        System.getProperties().put("sun.misc.ProxyGenerator.saveGeneratedFiles","true");
+//        System.getProperties().put("jdk.proxy.ProxyGenerator.saveGeneratedFiles","true");
         ApplicationContext context = new ClassPathXmlApplicationContext("classpath:application.xml");
 
         /**

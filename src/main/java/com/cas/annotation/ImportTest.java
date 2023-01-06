@@ -1,5 +1,6 @@
 package com.cas.annotation;
 
+import org.aspectj.lang.annotation.Before;
 import org.springframework.beans.factory.support.BeanDefinitionRegistry;
 import org.springframework.beans.factory.support.BeanNameGenerator;
 import org.springframework.context.annotation.DeferredImportSelector;
