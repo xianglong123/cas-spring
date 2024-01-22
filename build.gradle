@@ -1,28 +1,42 @@
 plugins {
     id 'org.springframework.boot' version '2.2.1.RELEASE'
     id 'io.spring.dependency-management' version '1.0.11.RELEASE'
-    id 'java'
-    id 'io.freefair.lombok' version '5.0.0-rc6' apply false
-    //gradle提供的mybatis generator插件
-    id "com.arenagod.gradle.MybatisGenerator" version "1.4"
 }
 
-group 'com.cas'
-version '0.0.1-SNAPSHOT'
+allprojects {
 
-repositories {
-    maven {
-        url 'https://maven.aliyun.com/repository/public/'
+    group = 'com.cas'
+    version = '1.0.0'
+
+
+    repositories {
+        maven { url 'https://maven.aliyun.com/repository/public/' }
     }
-    mavenCentral()
+
 }
 
-dependencies {
-    implementation 'org.springframework:spring-context:5.2.1.RELEASE'
-    implementation 'org.aspectj:aspectjweaver:1.9.4'
-    implementation 'com.alibaba:druid:1.2.9'
+subprojects { // 子模块的通用配置
+    apply plugin: 'java'
+    apply plugin: 'io.spring.dependency-management'
+    apply plugin: 'idea'
+
+    repositories {
+        maven { url 'https://maven.aliyun.com/repository/public/' }
+        maven { url 'https://maven.aliyun.com/repository/central/' }
+        mavenLocal()
+        mavenCentral()
+    }
+
+    dependencies {
+        implementation 'org.springframework:spring-context:5.2.1.RELEASE'
+        implementation 'org.aspectj:aspectjweaver:1.9.4'
+        implementation 'com.alibaba:druid:1.2.9'
+    }
+
+    test {
+        useJUnitPlatform()
+    }
+
 }
 
-test {
-    useJUnitPlatform()
-}
+

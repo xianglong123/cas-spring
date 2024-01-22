@@ -1,2 +1,5 @@
 rootProject.name = 'cas-spring'
+include 'spring-aware'
+include 'spring-annotation'
+include 'spring-test'
 
