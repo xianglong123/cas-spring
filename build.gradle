@@ -28,10 +28,12 @@ subprojects { // 子模块的通用配置
     }
 
     dependencies {
-        implementation 'org.springframework:spring-context:5.2.1.RELEASE'
+        implementation 'org.springframework:spring-context:5.3.10'
         implementation 'org.aspectj:aspectjweaver:1.9.4'
         implementation 'com.alibaba:druid:1.2.9'
     }
+
+
 
     test {
         useJUnitPlatform()

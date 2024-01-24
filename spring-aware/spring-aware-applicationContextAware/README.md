@@ -1,0 +1,2 @@
+## 如果你想在创建对象的时候，访问上下文，可以实现ApplicationContextAware，会自动调用setApplicationContext方法
+
